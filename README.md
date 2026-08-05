@@ -34,22 +34,25 @@ A modern web application that analyzes password strength, provides personalized 
 SecPass/
 │
 ├── app.py
-├── requirements.txt
 ├── common_passwords.txt
+├── requirements.txt
 │
 ├── static/
 │   ├── css/
-│   ├── js/
+│   │   └── style.css
 │   ├── images/
-│   └── icons/
+│   └── js/
+│       └── script.js
 │
 ├── templates/
+│   ├── index.html
+│   └── error.html
 │
 └── utils/
+    ├── __init__.py
     ├── analyzer.py
     └── generator.py
 ```
-
 ---
 
 ## 🚀 Getting Started
