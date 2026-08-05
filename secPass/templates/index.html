@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecPass</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="#hero" class="logo">
+
+                <i data-lucide="shield-check"></i>
+
+                <span>SecPass</span>
+
+            </a>
+
+            <ul class="nav-links">
+
+                <li><a href="#features">Features</a></li>
+
+                <li><a href="#analyzer">Analyzer</a></li>
+
+                <li><a href="#generator">Generator</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Main  -->
+
+    <main>
+        <section id="hero">
+
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+                    <span class="hero-badge">
+                        Secure Today • Protect Tomorrow
+                    </span>
+
+                    <h1>
+                        Password Security
+                        <span>Analyzer</span>
+                    </h1>
+
+                    <p>
+                        Analyze password strength, receive smart security
+                        recommendations, and generate strong passwords in
+                        seconds with SecPass.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#analyzer" class="btn-primary">
+
+                            Analyze Password
+
+                        </a>
+
+                        <a href="#generator" class="btn-secondary">
+
+                            Generate Password
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-image">
+
+                    <img src="{{ url_for('static', filename='images/secPassHero.png') }}" alt="Password Security">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Features -->
+
+        <section id="features">
+
+            <div class="section-title">
+                <h2>
+                    Why Choose SecPass?
+                </h2>
+
+                <p>
+                    Everything you need to create and evaluate secure passwords.
+                </p>
+            </div>
+
+            <div class="features-grid">
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+
+                        <i data-lucide="shield-check"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Analyze
+
+                    </h3>
+
+                    <p>
+
+                        Evaluate your password using multiple security rules
+                        and instantly discover weak points.
+
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+
+                        <i data-lucide="sparkles"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Improve
+
+                    </h3>
+
+                    <p>
+
+                        Receive smarter recommendations to strengthen your
+                        password and improve security.
+
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+
+                        <i data-lucide="key-round"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Generate
+
+                    </h3>
+
+                    <p>
+
+                        Generate a strong password instantly with a single click.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Password Analyzer -->
+
+        <section id="analyzer">
+
+            <div class="section-title">
+
+                <h2>
+
+                    Password Analyzer
+
+                </h2>
+
+                <p>
+
+                    Check how secure your password is in seconds.
+
+                </p>
+
+            </div>
+
+            <div class="analyzer-card">
+
+                <label for="passwordInput">
+
+                    Enter your password
+
+                </label>
+
+                <div class="password-input">
+
+                    <input type="password" id="passwordInput" placeholder="Enter your password">
+
+                    <button id="togglePassword" class="icon-button" type="button">
+
+                        <i data-lucide="eye"></i>
+
+                    </button>
+
+                    <button id="tipsButton" class="icon-button" type="button">
+
+                        <i data-lucide="circle-help"></i>
+
+                    </button>
+
+                </div>
+
+                <p id="errorMessage" class="error-message"></p>
+
+                <button id="analyzeButton" class="primary-button">
+
+                    <i data-lucide="shield-check"></i>
+
+                    <span>
+
+                        Analyze Security
+
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <div id="analysisResult" class="analysis-card">
+
+                <h3>
+
+                    Analysis Result
+
+                </h3>
+
+                <div class="strength-bar">
+
+                    <div id="strengthFill"></div>
+
+                </div>
+
+                <div id="strengthText">
+
+                    Strong Password
+
+                </div>
+
+                <p id="warningText" class="warning-text"></p>
+                <div id="securityChecklist">
+
+                </div>
+
+                <div class="suggestions">
+
+                    <h4>
+
+                        Suggested Passwords
+
+                    </h4>
+
+                    <div id="improvedPasswords">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Password Generator  -->
+
+        <section id="generator">
+
+            <div class="section-title">
+
+                <h2>
+
+                    Password Generator
+
+                </h2>
+
+                <p>
+
+                    Generate a strong password with one click.
+
+                </p>
+
+            </div>
+
+            <div class="generator-card">
+
+                <button id="generateButton" class="primary-button">
+
+                    <i data-lucide="key-round"></i>
+
+                    <span>
+
+                        Generate Password
+
+                    </span>
+
+                </button>
+
+                <div id="loading" class="loading">
+
+                    <div class="spinner"></div>
+
+                    <p>
+
+                        Generating secure password...
+
+                    </p>
+
+                </div>
+
+                <div id="generatedBox" class="generated-box">
+
+                    <input id="generatedPassword" type="text" readonly>
+
+                    <button id="copyPassword" class="copy-button" type="button">
+
+                        <i data-lucide="copy"></i>
+
+                        <span>Copy</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <!-- Password Tips  -->
+
+    <dialog id="tipsDialog">
+
+        <div class="dialog-header">
+
+            <h2>Password Tips</h2>
+
+            <button id="closeDialog" class="dialog-close">
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+        </div>
+
+        <div class="dialog-body">
+
+            <div class="tip-item">
+
+                <i data-lucide="check-circle-2"></i>
+
+                <span>Use at least 12 characters.</span>
+
+            </div>
+
+            <div class="tip-item">
+
+                <i data-lucide="check-circle-2"></i>
+
+                <span>Mix uppercase and lowercase letters.</span>
+
+            </div>
+
+            <div class="tip-item">
+
+                <i data-lucide="check-circle-2"></i>
+
+                <span>Include numbers.</span>
+
+            </div>
+
+            <div class="tip-item">
+
+                <i data-lucide="check-circle-2"></i>
+
+                <span>Add special characters (!@#$...).</span>
+
+            </div>
+
+            <div class="tip-item">
+
+                <i data-lucide="check-circle-2"></i>
+
+                <span>Avoid names, birthdays, or common words.</span>
+
+            </div>
+
+        </div>
+
+    </dialog>
+
+
+    <!--  Footer  -->
+    <footer>
+
+        <div class="footer-content">
+
+            <span>CS50 Final Project</span>
+
+            <div class="footer-center">
+                <a href="https://github.com/z2dev" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/zahrakhalfan/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+            </div>
+
+            <span>Zahra Mohsen</span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Lucide Icons -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+
+        lucide.createIcons();
+
+    </script>
+    \
+    <!-- JavaScript -->
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

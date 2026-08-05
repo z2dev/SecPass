@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ code }} | SecPass</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <main>
+
+        <section id="hero">
+
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+                    <span class="hero-badge">
+                        SecPass Error
+                    </span>
+
+                    <h1>{{ code }}</h1>
+
+                    <h2>{{ title }}</h2>
+
+                    <p>
+                        {{ message }}
+                    </p>
+
+                    <a href="{{ url_for('index') }}" class="btn-primary">
+                        Back to Home
+                    </a>
+
+                </div>
+
+                <div class="hero-image">
+
+                    <img
+                        src="{{ url_for('static', filename='images/secPassError.png') }}"
+                        alt="Security">
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
