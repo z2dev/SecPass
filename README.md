@@ -9,13 +9,10 @@ A modern web application that analyzes password strength, provides personalized 
 ## ✨ Features
 
 - 🔒 Real-time password strength analysis
-- 📊 Password security score (0–100)
 - 💡 Personalized security recommendations
 - 🚫 Detection of common passwords
 - 🔁 Detection of repeated and sequential characters
 - 🔑 Secure password generator
-- 👁️ Show / Hide password
-- 📋 One-click password copy
 - 🛡️ Password security tips
 - ⚠️ Custom error pages
 
