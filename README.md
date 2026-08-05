@@ -2,7 +2,7 @@
 
 A modern web application that analyzes password strength, provides personalized security recommendations, and generates secure passwords using Flask.
 
-![SecPass Preview](static/images/screen.png)
+![SecPass Preview](secPass/static/images/screen.png)
 
 ---
 
